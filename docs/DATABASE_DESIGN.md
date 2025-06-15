@@ -18,6 +18,7 @@ Each user has one profile referenced by `user_id`.
 - `profile_id` uuid references `profiles(id)` on delete cascade
 - `title` text not null
 - `url` text
+- `type` text not null default `link`
 - `position` integer default `0`
 - `created_at` timestamp with time zone default `now()`
 
