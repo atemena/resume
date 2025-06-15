@@ -24,7 +24,7 @@ This document lists tasks for turning the starter into a production-ready MVP. A
 - [ ] Add monitoring and logging (e.g., Vercel analytics or another provider).
 
 ## MVP Social Profile
-- [ ] **Human:** Design database schema for user profiles and tiles.
+ - [x] **Human:** Design database schema for user profiles and tiles. See `docs/DATABASE_DESIGN.md`.
 - [ ] **Agent:** Create Supabase migration to add a `profiles` table with `user_id` and `tiles` JSON column.
 - [ ] **Agent:** Build `/profile` page that shows the user's profile after login.
 - [ ] **Agent:** Implement a profile builder form allowing users to add or remove text tiles and save to Supabase.
