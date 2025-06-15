@@ -11,8 +11,9 @@ This document lists tasks for turning the starter into a production-ready MVP. A
 
 ## Testing & CI
 - [ ] Set up GitHub Actions to run `npm run lint` and `npm run build` on pull requests.
-- [ ] Add a unit testing framework (e.g., Vitest or Jest) and write initial tests.
+- [x] Add a unit testing framework (e.g., Vitest or Jest) and write initial tests.
 - [ ] Configure an end-to-end test runner such as Playwright.
+- [x] Write tests for profile API routes and actions.
 
 ## Development Tooling
 - [ ] Set up Prettier for consistent code formatting.
@@ -27,8 +28,9 @@ This document lists tasks for turning the starter into a production-ready MVP. A
 - [x] **Human:** Design database schema for user profiles and tiles. See `docs/DATABASE_DESIGN.md`.
 - [x] **Agent:** Create Supabase migrations to add `profiles` and `tiles` tables with proper indexes..
 - [x] **Agent:** Build `/profile` page that shows the user's profile after login.
-- [ ] **Agent:** Implement a profile builder form allowing users to add or remove text tiles and save to Supabase.
-- [ ] **Agent:** Add API routes or server actions for saving profile data.
+- [x] **Agent:** Implement a profile builder form allowing users to add or remove text tiles and save to Supabase.
+- [x] **Agent:** Add API routes or server actions for saving profile data.
+- [x] **Agent:** Hook profile builder to API routes for CRUD operations.
 - [ ] **Agent:** Write integration tests covering profile viewing and creation flows.
 - [ ] **Human:** Provide design assets and styling guidelines for the profile tiles.
 
