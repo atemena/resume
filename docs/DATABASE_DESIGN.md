@@ -22,7 +22,7 @@ Each user has one profile referenced by `user_id`.
 - `position` integer default `0`
 - `created_at` timestamp with time zone default `now()`
 
-Tiles are ordered by the `position` column so a user's profile can display them in a specific order. Tiles also include a `type` column for mapping to React components. The MVP supports two types: `link` and `wide_link`.
+Tiles are ordered by the `position` column so a user's profile can display them in a specific order. Only simple link tiles are considered for the MVP but this schema can be extended with a `type` column or additional metadata.
 
 ### relationships
 - `profiles.user_id` → `auth.users.id`
