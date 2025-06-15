@@ -1,12 +1,10 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { ProfileTile } from "@/components/profile/profile-tile";
-import { EmptyTile } from "@/components/profile/empty-tile";
+import { ProfileBuilder } from "@/components/profile/profile-builder";
 import { type Profile, type Tile } from "@/lib/types";
 
-export default async function ProtectedPage() {
+export default async function ProfileBuilderPage() {
   const supabase = await createClient();
-
   const { data: userData, error: userError } = await supabase.auth.getUser();
   if (userError || !userData?.user) {
     redirect("/auth/login");
@@ -30,20 +28,7 @@ export default async function ProtectedPage() {
     <div className="flex flex-col gap-4 p-4">
       <h1 className="text-2xl font-bold">{profile.display_name}</h1>
       {profile.bio && <p>{profile.bio}</p>}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 auto-rows-min">
-        {tiles.length === 0 ? (
-          <EmptyTile />
-        ) : (
-          tiles.map((tile) => (
-            <div
-              key={tile.id}
-              className={tile.type === "wide_link" ? "md:col-span-2" : ""}
-            >
-              <ProfileTile tile={tile} />
-            </div>
-          ))
-        )}
-      </div>
+      <ProfileBuilder profileId={profile.id} initialTiles={tiles} />
     </div>
   );
 }
