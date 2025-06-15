@@ -1,0 +1,5 @@
+# Sample Supabase config for local development
+[project]
+api_url = "http://localhost:54321"
+api_key = "public-anon-key"
+ref = "local"
